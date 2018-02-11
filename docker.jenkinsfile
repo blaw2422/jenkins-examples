@@ -18,6 +18,6 @@ node {
     // deploy
     image.push(env.DOCKER_IMAGE_TAG)
 
-    sh "kubectl set image ${env.POD_NAME} ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+    sh "kubectl set image deployment/${env.DEPLOYMENT_NAME} ${POD_LABEL}=${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
   }
 }
