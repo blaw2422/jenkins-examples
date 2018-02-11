@@ -1,0 +1,10 @@
+node {
+  checkout scm
+
+  def image = docker.build("node", "-f node.dockerfile")
+  image.inside {
+    sh 'ls -al'
+    sh 'cat package.json'
+    sh 'yarn test'
+  }
+}
