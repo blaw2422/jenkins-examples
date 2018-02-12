@@ -1,5 +1,5 @@
 node {
-  stage {
+  stage('build') {
     checkout scm
 
     docker.withRegistry(env.DOCKER_REGISTRY_URL, 'docker_registry_creds') {
