@@ -2,7 +2,7 @@ node {
   stage('build') {
     checkout scm
 
-    docker.withRegistry(env.DOCKER_REGISTRY_URL, 'jenkins-service-principal') {
+    docker.withRegistry(env.DOCKER_REGISTRY_URL, 'jenkins-service-princial') {
 
       // build
       def image = docker.build(env.DOCKER_IMAGE_NAME, "-f node.dockerfile")
