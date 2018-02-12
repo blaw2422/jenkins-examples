@@ -1,7 +1,7 @@
 node {
   stage('build') {
     checkout scm
-
+    sh 'printenv'
     docker.withRegistry(env.DOCKER_REGISTRY_URL, 'jenkins-service-princial') {
 
       // build
